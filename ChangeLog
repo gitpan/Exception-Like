@@ -1,0 +1,23 @@
+2002-10-10 18:12  ziya
+
+	* test.pl: Cleared special test line.
+
+2002-10-10 18:11  ziya
+
+	* Changes: Changes update.
+
+2002-10-10 18:09  ziya
+
+	* Like.pm, MANIFEST, test.pl: Getting it all ready for for release.
+
+2002-10-10 15:01  ziya
+
+	* Changes, Like.pm, LikeTest.pm, MANIFEST, Makefile.PL, README,
+	test.pl: Initial revision
+
+2002-10-10 15:01  ziya
+
+	* Changes, Like.pm, LikeTest.pm, MANIFEST, Makefile.PL, README,
+	test.pl: First import for an 'exception like' error reporting by
+	return values.
+
