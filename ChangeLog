@@ -1,3 +1,29 @@
+2003-04-23 16:13  ziya
+
+	* Like.pm, Makefile.PL: Removed perl 5.6 dependencies.	 see: 
+	From: "Richard Soderberg" <rs@crystalflame.net> To: <ziya@ripe.net>
+	Subject: Exception::Like & Perl 5.005_03 Date: Wed, 9 Apr 2003
+	05:25:28 -0700 Message-ID:
+	<CGEAIAFGDFMPCFCBLLCOKEJJCAAA.rs@crystalflame.net>
+	
+	Hi, Exception::Like breaks on 5.005_03 -- seems to depend on having
+	+Perl 5.6 (usually 'our' and 'use warnings').  Can you put a
+	version check for +5.6 or a dependency for the 'warnings' module in
+	your Makefile.PL?  It'd +help us backwater 5.5.3 folk.
+	
+	 - R.
+	
+	and also put require 5.006 just incase.
+
+2002-10-11 17:05  ziya
+
+	* BUGS: bugs database
+
+2002-10-10 21:35  ziya
+
+	* ChangeLog, Like.pm: Export rules fixed for use by multiple
+	modules.
+
 2002-10-10 20:34  ziya
 
 	* ChangeLog, Changes, MANIFEST: ChangeLog update.

@@ -2,16 +2,16 @@ package Exception::Like;
 
 require 5.005_62;
 use strict;
-use warnings;
 
 require Exporter;
 use AutoLoader qw(AUTOLOAD);
+use vars qw(@ISA @EXPORT $VERSION);
 
-our @ISA = qw(Exporter);
+@ISA = qw(Exporter);
 
-our @EXPORT;
+@EXPORT;
 
-our $VERSION = '0.02';
+$VERSION = '0.03';
 
 my %_err_id;
 my $_err = {};
@@ -81,7 +81,6 @@ sub _add {
   my %arg = @_;
 
   for my $e (keys %arg) {
-    no warnings;
     eval "use constant $e=>'$e';";
     $_err_id{$e} = $arg{$e};
     push @EXPORT, $e;
@@ -114,7 +113,6 @@ sub errstr {
 sub _raw2str {
   my $e = shift;
 
-  no warnings;
   join ': '
     , $e->{no}
       , $_err_id{$e->{no}}
@@ -185,7 +183,6 @@ Exception::Like - Exception-like Error Checking
   use Exception::Like MyException=>'This is my exception';
 
   use strict;
-  use warnings;
 
   sub new {
     my $this = shift;
