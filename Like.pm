@@ -9,9 +9,9 @@ use AutoLoader qw(AUTOLOAD);
 
 our @ISA = qw(Exporter);
 
-our @EXPORT = qw(err errno errnos errstr errstrs dump_err clear_err errstack);
+our @EXPORT;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 my %_err_id;
 my $_err = {};
@@ -22,10 +22,12 @@ sub import {
   my $class = shift;
 
   # Export subs to level above
+  @EXPORT = qw(err errno errnos errstr errstrs dump_err clear_err errstack);
   Exporter::export_to_level($class, 1);
 
   @EXPORT = ();
 
+  # Adds to @EXPORT
   _add($class,
        TooManyParametersError=>'',
        UnexpectedParametersError=>'',
